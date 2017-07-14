@@ -51,7 +51,6 @@ chessboard.dot = function () {
 	];
 	
 	
-	
 	for(var i=0;i<17;i++){
 		this.havePawn[i] = new Array();
 		for(var j=0;j<17;j++){
@@ -70,6 +69,50 @@ chessboard.setPawn = function () {
 	}
 	
 }
+
+
+function findPath(start,end) {	
+	var allRoad = [];
+	for(var i=0;i<)
+}
+
+
+
+//observer
+
+/*
+var observer = function(data){
+	this.data = data;
+    this.transform(data);
+};
+
+observer.prototype.transform = function(data){
+	for(var key in data){
+		this.defineReactive(data,key,data[key]);
+	}
+}
+observer.prototype.defineReactive = function(data,key,value){
+	var dep = new Dep();
+	Object.defineProperty(data,key,{
+		enumerable : true,
+		configurable : true,
+		get:function(){
+			console.log('get key' + value)
+			return value;
+		},
+		set:function(newVal){
+			console.log('set key'+newVal)
+			if(newVal == value){
+				return; 
+			}
+			value = newVal;
+			observer(newVal)
+		}
+	})
+	observer(value);
+}
+*/
+
 
 
 
