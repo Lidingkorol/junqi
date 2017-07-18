@@ -82,3 +82,9 @@ util.getEventPosition = function(ev){
   }  
   return {x: x, y: y};  
 }  
+
+
+
+util.sort = function(a,b) {
+	return (a.x-b.x||a.y-b.y)
+}

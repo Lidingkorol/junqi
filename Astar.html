@@ -15,25 +15,28 @@
 			[0,0,1,0,0],
 			[1,1,0,1,1],
 			[0,0,1,0,0],
-			[0,0,0,0,0],
+			[0,0,0,0,1],
 		]
 	}
 	var asd = searchRoad(0,0,4,4);
 	console.log(asd)
-	var bsd = searchRoad(0,0,4,4);
-	console.log(bsd)
+	var ss = [];
+	console.log(ss)
 		//其中的MAP.arr是二维数组
 	function searchRoad(start_x,start_y,end_x,end_y){
 	    var openList=[],    //开启列表
 	        closeList=[],   //关闭列表
 	        result=[],      //结果数组
 	        result_index;   //结果数组在开启列表中的序号
-	
+	        var ss=[]
+	        
 	    openList.push({x:start_x,y:start_y,G:0});//把当前点加入到开启列表中，并且G是0
 	
 	    do{
 	        var currentPoint = openList.pop();
 	        closeList.push(currentPoint);
+	        
+	        ss.push(currentPoint);
 	        //console.log(closeList)
 	        var surroundPoint=SurroundPoint(currentPoint);
 	        for(var i in surroundPoint) {
@@ -78,7 +81,9 @@
 	        }
 	        openList.sort(sortF);//这一步是为了循环回去的时候，找出 F 值最小的, 将它从 "开启列表" 中移掉
 	    }while(!(result_index=existList({x:end_x,y:end_y},openList)));
-	
+		
+		console.log(ss)
+		
 	    //判断结果列表是否为空
 	    if(!result_index) {
 	        result=[];
